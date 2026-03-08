@@ -1,15 +1,23 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bashio
+set -euo pipefail
+
+CONFIG_NAME="$(bashio::config 'config_file')"
+[ -n "${CONFIG_NAME}" ] || CONFIG_NAME="yggdrasil.conf"
+
+USER_CONFIG="/config/${CONFIG_NAME}"
+DATA_CONFIG="/data/yggdrasil.conf"
 
 echo "Starting..."
 
-CONFIG_FILE=/data/yggdrasil.conf
-
-if test -f "$CONFIG_FILE"; then
-  echo "using exsisting yggdrasil config"
+if [ -f "${USER_CONFIG}" ]; then
+    echo "Using user config: ${USER_CONFIG}"
+    cp "${USER_CONFIG}" "${DATA_CONFIG}"
+elif [ -f "${DATA_CONFIG}" ]; then
+    echo "Using existing persistent config: ${DATA_CONFIG}"
 else
-  echo "No yggdrasil.conf found, generating... " 
-  yggdrasil -genconf > $CONFIG_FILE
+    echo "No config found, generating default config..."
+    yggdrasil -genconf > "${DATA_CONFIG}"
 fi
 
-echo "lunching Yggdrasil"
-yggdrasil -useconffile $CONFIG_FILE
+echo "Launching Yggdrasil"
+exec yggdrasil -useconffile "${DATA_CONFIG}"
