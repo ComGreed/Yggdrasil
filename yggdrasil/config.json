@@ -4,7 +4,7 @@
   "slug": "yggdrasil",
   "stage": "experimental",
   "description": "A Yggdrasil addon for Homeassistant. Yggdrasil is an experimental encrypted overlay P2P network",
-  "arch": ["aarch64", "amd64"],
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"]
   "url": "https://github.com/ComGreed/Yggdrasil",
   "startup": "system",
   "init": false,
