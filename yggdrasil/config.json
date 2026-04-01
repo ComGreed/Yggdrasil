@@ -1,6 +1,6 @@
 {
   "name": "Yggdrasil Network",
-  "version": "0.5.13",
+  "version": "0.5.12-r14",
   "slug": "yggdrasil",
   "stage": "experimental",
   "description": "A Yggdrasil addon for Homeassistant. Yggdrasil is an experimental encrypted overlay P2P network",
