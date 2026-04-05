@@ -1,8 +1,6 @@
-This is Repo is Migrated to Codeberg, please file issues and Requestest there.: 
-https://codeberg.org/thatv/HA-Addons
-
 # HA-Addons
-My Homeassistant Addons, mainly for my personal use but I am happy to share it. 
+Home Assistant Addon forked from https://github.com/thatv/HA-Addons for personal use.
+I just change a few things for personal use.
 
 ## Availble Addons
 - Yggdrasil
