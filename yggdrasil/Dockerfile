@@ -9,7 +9,7 @@ ENV LANG=C.UTF-8
 
 RUN apk add --no-cache --no-scripts \
     --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
-    bash sudo yggdrasil=0.5.13-r0
+    bash sudo yggdrasil=0.5.15-r0
 
 COPY run.sh /
 RUN chmod a+x /run.sh
